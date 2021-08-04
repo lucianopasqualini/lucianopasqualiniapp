@@ -7,3 +7,12 @@
     font-weight: 900;
     color: black !important;
 }
+
+.cartWidget {
+    border: 1px rgb(3, 3, 59);
+    margin: 5px;
+}
+
+.cartWidget img {
+    max-width: 40px;
+}
