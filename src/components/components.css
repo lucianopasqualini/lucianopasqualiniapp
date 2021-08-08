@@ -16,3 +16,25 @@
 .cartWidget img {
     max-width: 40px;
 }
+
+.itemSelectorBar {
+    border: 2px solid rgb(4, 4, 148);
+    border-radius: 5px;
+    max-height: auto;
+}
+
+.itemSelectorBar button {
+    background-color: white;
+    border: 0;
+    color: rgb(4, 4, 148);
+}
+
+.itemSelectorBar p {
+    margin: 5px 0;
+}
+
+.stockAvailable {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 0;
+}

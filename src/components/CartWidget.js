@@ -4,7 +4,7 @@ import './components.css';
 function CartWidget() {
     return <>
         <div className="cartWidget">
-            <img src="https://image.flaticon.com/icons/png/512/126/126083.png"/>
+            <img alt="" src="https://image.flaticon.com/icons/png/512/126/126083.png"/>
         </div>
     </>
 };
