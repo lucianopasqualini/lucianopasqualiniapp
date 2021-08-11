@@ -33,8 +33,29 @@
     margin: 5px 0;
 }
 
-.stockAvailable {
+.itemTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(4, 4, 148);
+}
+
+.itemDescription {
+    font-size: 14px;
+}
+
+.itemPrice {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(4, 4, 148);
+}
+
+.itemStock {
     font-size: 12px;
     font-style: italic;
     margin-bottom: 0;
+}
+
+.itemButton {
+    font-size: 16px !important;
+    padding: 5px 2px !important;
 }

@@ -1,19 +1,14 @@
 import React from 'react';
-import './components.css';
+import ItemList from './ItemList';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function ItemListContainer(props) {
-    return <div className="card col-3 offset-1 m-2">
-            <div className="card-body">
-                <h5 className="card-title">Producto</h5>
-                <p className="card-text">Descripción</p>
-                <div className="row align-items-center">
-                    <div className="col-5 offset-1">
-                        {props.children}
-                    </div>
-                    <button className="btn btn-primary col-4 offset-1">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
+function ItemListContainer() {
+  return (
+    <div className="my-5 row justify-content-center">
+        <h1 className="text-center my-3">E-commerce con reactjs</h1>
+      <ItemList />
+    </div>
+  );
 }
 
 export default ItemListContainer;
