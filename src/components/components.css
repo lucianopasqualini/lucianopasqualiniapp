@@ -46,7 +46,6 @@
 .itemPrice {
     font-size: 16px;
     font-weight: bold;
-    color: rgb(4, 4, 148);
 }
 
 .itemStock {
@@ -58,4 +57,16 @@
 .itemButton {
     font-size: 16px !important;
     padding: 5px 2px !important;
+}
+
+.socialNetwork {
+    width: 40px;
+    height: auto;
+    padding: 0 1%;
+}
+
+.titulo {
+    font-size: 46px !important;
+    font-weight: bold;
+    color: rgb(4, 4, 148);;
 }

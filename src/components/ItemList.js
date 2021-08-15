@@ -50,7 +50,7 @@ const productos = [
         stock: '3',
     }
 ];
-  
+
 function ItemList () {
 
     const [items, setItems] = useState([]);
