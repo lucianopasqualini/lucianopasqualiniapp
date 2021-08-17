@@ -3,7 +3,7 @@ import './components.css';
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
 
-function NavBar() {
+function Productos() {
     return <>
             <header id="header">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light row">
@@ -12,11 +12,11 @@ function NavBar() {
                     </a>
                     <div className="col-6 offset-1" id="navbarNav">
                         <ul className="navbar-nav justify-content-center">
-                            <li className="nav-item mr-5">
-                                <Link to={'/productos'} style={{ textDecoration: 'none'}}><a className="nav-link" href="Cursos.html">Productos</a></Link>
+                            <li className="nav-item mr-5 active">
+                            <Link to={'/productos'} style={{ textDecoration: 'none'}}><a className="nav-link" href="Cursos.html">Productos</a></Link>
                             </li>
                             <li className="nav-item mr-5">
-                                <Link to={'/faq'} style={{ textDecoration: 'none'}}><a className="nav-link" href="faq.html">FAQ</a></Link>
+                            <Link to={'/faq'} style={{ textDecoration: 'none'}}><a className="nav-link" href="faq.html">FAQ</a></Link>
                             </li>
                         </ul>
                     </div>
@@ -28,4 +28,4 @@ function NavBar() {
         </>;
 }
 
-export default NavBar;
+export default Productos;

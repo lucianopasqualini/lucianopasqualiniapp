@@ -1,55 +1,86 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import productos from "./productos.json"
+import NavBar from "./NavBar"
+import { useParams } from 'react-router-dom';
 
-function render(item) {
-    return(
-        <ItemDetail
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            description={item.description}
-            price={item.price}
-            pictureUrl={item.pictureUrl}
-            stock={item.stock}
-            initial={item.initial}/>
-        )
-}
+const productos = [
+    {
+        id: '0',
+        title: 'Producto',
+        description: 'Acá iría la descripción del producto (por ahora sin posibilidad de "ver más" y "ver menos").',
+        price: '1000',
+        pictureUrl: 'https://sardivar.websites.co.in/twenty-nineteen/img/defaults/product-default.png',
+        initial: '0',
+        stock: '8',
+    },
+    {
+        id: '1',
+        title: 'Producto',
+        description: 'Acá iría la descripción del producto (por ahora sin posibilidad de "ver más" y "ver menos").',
+        price: '3000',
+        pictureUrl: 'https://sardivar.websites.co.in/twenty-nineteen/img/defaults/product-default.png',
+        initial: '0',
+        stock: '30',
+    },
+    {
+        id: '2',
+        title: 'Producto',
+        description: 'Acá iría la descripción del producto (por ahora sin posibilidad de "ver más" y "ver menos").',
+        price: '750',
+        pictureUrl: 'https://sardivar.websites.co.in/twenty-nineteen/img/defaults/product-default.png',
+        initial: '0',
+        stock: '12',
+    },
+    {
+        id: '3',
+        title: 'Producto',
+        description: 'Acá iría la descripción del producto (por ahora sin posibilidad de "ver más" y "ver menos").',
+        price: '2100',
+        pictureUrl: 'https://sardivar.websites.co.in/twenty-nineteen/img/defaults/product-default.png',
+        initial: '0',
+        stock: '16',
+    },
+    {
+        id: '4',
+        title: 'Producto',
+        description: 'Acá iría la descripción del producto (por ahora sin posibilidad de "ver más" y "ver menos").',
+        price: '1650',
+        pictureUrl: 'https://sardivar.websites.co.in/twenty-nineteen/img/defaults/product-default.png',
+        initial: '0',
+        stock: '3',
+    }
+];
 
 function ItemDetailContainer() {
     
     const [items, setItem] = useState({});
 
-    const getItem = () => {
-        setItem({
-            id: '1',
-            title: 'GREEN OLIVE & LAVENDER SCALP OIL',
-            description: 'Lavender Essential Oil: Soothes itchy scalp, conditions hair, and supports natural blood circulation and healthy hair growth. / Olive Seed Oil: Loaded with antioxidants and vitamins; protects and fortifies hair./ Vitamin E: Nourishes and restores dry hair and scalp. / Green Olive Seed Oil, Sweet Almond Seed Oil, Natural Grand Soleil Oil, Lavender Flower Extract and Vitamin E.',
-            price: '3000',
-            pictureUrl: 'https://retailminded.com/wp-content/uploads/2016/03/EN_GreenOlive-1.jpg',
-            initial: '0',
-            stock: '30',
-        })
+    const { id } = useParams();
+
+    const getItem = (abc) => {
+        const UnItem = productos.find( producto => producto.id === abc);
+        setItem(UnItem)
+        console.log(UnItem)
     };
 
     useEffect(() => {
-        setTimeout( () => {
-            getItem();
-            render(items)
-        }, 2000)
+        getItem(id);
     }, []);
 
     return (
-        <ItemDetail
-            key={items.id}
-            id={items.id}
-            title={items.title}
-            description={items.description}
-            price={items.price}
-            pictureUrl={items.pictureUrl}
-            stock={items.stock}
-            initial={items.initial}
-        />
+        <div className="App container-fluid justify-content-center">
+            <NavBar />
+            <ItemDetail
+                key={items.id}
+                id={items.id}
+                title={items.title}
+                description={items.description}
+                price={items.price}
+                pictureUrl={items.pictureUrl}
+                stock={items.stock}
+                initial={items.initial}
+            />
+        </div>
     );
 }
 

@@ -59,7 +59,7 @@ function ItemList () {
         () => {
         setTimeout(async () => {
             setItems(productos);
-        }, 2000);
+        }, 1000);
         },
     );
 

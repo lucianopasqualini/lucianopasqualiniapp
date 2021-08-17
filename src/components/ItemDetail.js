@@ -6,7 +6,7 @@ function ItemDetail({id, title, description, price, pictureUrl, stock, initial})
     const [count, setCount] = useState(parseInt(initial));
 
     return (
-        <div className="row col-8 offset-2">
+        <div className="col-8 offset-2">
                 <div className="row align-items-center">
                     <div className="col-6">
                         <h5 className="card-title text-start itemTitle my-4">{title}</h5>
