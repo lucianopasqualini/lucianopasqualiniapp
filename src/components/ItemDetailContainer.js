@@ -23,18 +23,20 @@ function ItemDetailContainer() {
     }, [id]);
 
     return (
-        <div className="App container-fluid justify-content-center">
+        <div className="App container-fluid bg-light">
             <NavBar />
-            <ItemDetail
-                key={items.id}
-                id={items.id}
-                title={items.title}
-                description={items.description}
-                price={items.price}
-                pictureUrl={items.pictureUrl}
-                stock={items.stock}
-                initial={items.initial}
-            />
+            <div className="bg-white py-5">
+                <ItemDetail
+                    key={items.id}
+                    id={items.id}
+                    title={items.title}
+                    description={items.description}
+                    price={items.price}
+                    pictureUrl={items.pictureUrl}
+                    stock={items.stock}
+                    initial={items.initial}
+                />
+            </div>
         </div>
     );
 }

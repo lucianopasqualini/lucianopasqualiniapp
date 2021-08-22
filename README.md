@@ -1,3 +1,16 @@
+# Buenas Birras e-commerce con React!
+Pagina de ecommerce genérica para usar con productos de cualquier categoría.
+
+# HOME
+El home carga una lista de productos desde un .json con una demora de 2 segundos para simular un tiempo de carga de datos asíncrono. 
+El navbar esta compuesto del logo del site que lleva hacia la página inicial en cualquier momento, así como 2 secciones adicionales que porían ser categorías, FAQs, etc.
+Actualmente hay un link de Géneros que agrupa cada uno de los productos disponibles hoy en el site según sean productos de hombre o muher. Cada uno lleva a la lista de productos de cada uno de ellos.
+El otro es un link de FAQs que todavía está en construcción.
+Por úlitmo, una imagen del carrito para poder visualizar los productos del mismo (todavía en progreso).
+
+# GÉNEROS
+Cada uno de estos está hecho haciendo un filtro del listado de productos inicial, de acuerdo al género al que está destinada la prenda de ropa (usando useParams).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

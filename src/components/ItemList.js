@@ -30,8 +30,8 @@ function ItemList () {
                     pictureUrl={pictureUrl}
                     stock={stock}
                     initial={initial}/>
-                    );
-            })};
+                    )
+            })}
         </>
     );
 }

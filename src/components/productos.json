@@ -6,7 +6,8 @@
         "price": 4000,
         "pictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/65176e99f2dd4f23b91eab1400f78fbb_9366/Camiseta_Tercer_Uniforme_River_Plate_Blanco_FH7901_01_laydown.jpg",
         "initial": 0,
-        "stock": 8
+        "stock": 8,
+        "genero": "masculino"
     },
     {
         "id": 1,
@@ -15,7 +16,8 @@
         "price": 6000,
         "pictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/055ae748cff74a7d889cabad00f6da29_9366/Campera_3_Tiras_River_Plate_Negro_FQ7692_21_model.jpg",
         "initial": 0,
-        "stock": 30
+        "stock": 30,
+        "genero":"masculino"
     },
     {
         "id": 2,
@@ -24,7 +26,8 @@
         "price": 8000,
         "pictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/6614e5b671604374ba57ac400028a7be_9366/Camiseta_Visitante_River_Plate_20-21_Rojo_FQ7662_01_laydown.jpg",
         "initial": 0,
-        "stock": 12
+        "stock": 12,
+        "genero":"masculino"
     },
     {
         "id": 3,
@@ -33,7 +36,8 @@
         "price": 5500,
         "pictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/ab52d8fe1ab84e23896aad2501324645_9366/Chomba_3_Tiras_River_Plate_Rojo_GK6512_01_laydown.jpg",
         "initial": 0,
-        "stock": 16
+        "stock": 16,
+        "genero":"masculino"
     },
     {
         "id": 4,
@@ -42,6 +46,37 @@
         "price": 3200,
         "pictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/cc82db4d73f24d228339ac72015bb38a_9366/Shorts_Local_River_Plate_20-21_Negro_FQ7665_01_laydown.jpg",
         "initial": 0,
-        "stock": 3
+        "stock": 3,
+        "genero":"masculino"
+    },
+    {
+        "id": 5,
+        "title": "TOP DEPORTIVO BELIEVE THIS ITERATIONS",
+        "description": "Cada día es diferente. Los niveles de energía cambian, pero aún así, entrenamos. Este top deportivo adidas te ofrece soporte medio durante tu rutina en el gimnasio. ¿Training o yoga? Practicá cualquiera de los dos mientras conservás el estilo con un estampado inspirado en Stella McCartney.",
+        "price": 4800,
+        "pictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b914c9ff749e4ee8ab42abc900c0e410_9366/Top_Deportivo_Believe_This_Iterations_Gris_FU1141_01_laydown.jpg",
+        "initial": 0,
+        "stock": 9,
+        "genero":"femenino"
+    },
+    {
+        "id": 6,
+        "title": "BUZO CON CAPUCHA ESSENTIALS",
+        "description": "Ponéte otra capa de protección antes de salir a en la madrugada. Este buzo con capucha holgado te mantiene seco kilómetro tras kilómetro. Su tejido de felpa francesa se siente muy suave en tu piel y los logos adidas metalizados le confieren un look muy moderno.",
+        "price": 6400,
+        "pictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/e02e4dfe5d6e4534bd92aab100f8914c_9366/Buzo_con_Capucha_Essentials_Negro_FL0147_01_laydown.jpg",
+        "initial": 0,
+        "stock": 21,
+        "genero":"femenino"
+    },
+    {
+        "id": 7,
+        "title": "PANTALÓN SPORTSWEAR WINNERS ESTAMPADO",
+        "description": "El descanso para recargarte de energía hace parte del deporte. La energía que entregás tiene que regresar a tu cuerpo eventualmente, y este pantalón adidas te ayuda a lograrlo con total comodidad. El equilibrio es esencial en todo lo que hacés. Su tejido suave y flexible y la entrepierna más holgada te permiten estirarte para consentir a tus músculos con facilidad.",
+        "price": 7500,
+        "pictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/5494d1d9cdf24a30b1cfac820106795d_9366/Pantalon_adidas_Sportswear_Winners_Estampado_Negro_GL0359_21_model.jpg",
+        "initial": 0,
+        "stock": 16,
+        "genero":"femenino"
     }
 ]
