@@ -6,7 +6,7 @@ import './components.css';
 import NavBar from './NavBar';
 
 
-function GenreList() {
+function GenderList() {
     const {genero} = useParams();
 
     const [items, setItems] = useState([]);
@@ -51,4 +51,4 @@ function GenreList() {
     );
 }
 
-export default GenreList; 
+export default GenderList; 

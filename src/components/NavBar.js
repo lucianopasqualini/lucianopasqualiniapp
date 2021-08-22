@@ -20,10 +20,10 @@ function NavBar() {
                         <Nav>
                             <NavDropdown title="Géneros" id="nav-dropdown" activeClassName="nav-item">
                                 <NavDropdown.Item eventKey="4.1" >
-                                    <NavLink className="text-decoration-none nav-item" activeClassName="activeRoute" to="/masculino">Masculino</NavLink>
+                                    <NavLink className="text-decoration-none nav-item" activeClassName="activeRoute" to="/gender/masculino">Masculino</NavLink>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item eventKey="4.2">
-                                    <NavLink className="text-decoration-none nav-item" activeClassName="activeRoute" to="/femenino">Femenino</NavLink>
+                                    <NavLink className="text-decoration-none nav-item" activeClassName="activeRoute" to="/gender/femenino">Femenino</NavLink>
                                 </NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="FAQ">

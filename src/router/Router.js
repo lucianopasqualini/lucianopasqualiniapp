@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from '../App';
 import ItemDetailContainer from '../components/ItemDetailContainer';
 import Faq from '../components/Faq';
-import GenreList from '../components/GenreList';
+import GenderList from '../components/GenderList';
+import Cart from '../components/Cart'
 
 const Router = () => {
     return (
@@ -11,8 +12,9 @@ const Router = () => {
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route exact path="/faq" component={Faq} />
-                <Route exact path="/:genero" component={GenreList} />
+                <Route exact path="/gender/:genero" component={GenderList} />
                 <Route exact path="/itemdetail/:id" component={ItemDetailContainer} />
+                <Route exact path="/cart" component={Cart} />
             </Switch>
         </BrowserRouter>
     );
