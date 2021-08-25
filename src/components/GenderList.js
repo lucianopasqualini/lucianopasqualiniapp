@@ -29,19 +29,9 @@ function GenderList() {
                         <div className="py-2 row justify-content-center bg-white">
                             <> 
                             {items.map(producto => {
-                                const { id, title, description, price, pictureUrl, stock, initial, genero } = producto;
                                 return (
-                                <Item
-                                    key={id}
-                                    id={id}
-                                    title={title}
-                                    description={description}
-                                    price={price}
-                                    pictureUrl={pictureUrl}
-                                    stock={stock}
-                                    initial={initial}
-                                    genero={genero}/>
-                                    );
+                                    <Item key={producto.id} producto={producto}/>
+                                );
                             })};
                             </>
                         </div>

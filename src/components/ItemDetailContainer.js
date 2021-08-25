@@ -13,7 +13,6 @@ function ItemDetailContainer() {
     const getItem = (abc) => {
         const UnItem = ListaProductos.find( (producto) => producto.id == abc);
         const obj = {...UnItem};
-    //    const UnItem = productos.find( (producto) => producto.id === abc);
         setItem(obj)
         console.log(UnItem)
     };
@@ -26,16 +25,7 @@ function ItemDetailContainer() {
         <div className="App container-fluid bg-light">
             <NavBar />
             <div className="bg-white py-5">
-                <ItemDetail
-                    key={items.id}
-                    id={items.id}
-                    title={items.title}
-                    description={items.description}
-                    price={items.price}
-                    pictureUrl={items.pictureUrl}
-                    stock={items.stock}
-                    initial={items.initial}
-                />
+                <ItemDetail key={items.id} producto={items}/>
             </div>
         </div>
     );

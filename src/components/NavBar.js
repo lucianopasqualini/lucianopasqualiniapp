@@ -1,7 +1,8 @@
 import React from 'react';
 import './components.css';
 import { NavLink } from 'react-router-dom'
-import { Nav , Navbar, NavDropdown, Container, Button } from 'react-bootstrap';
+import { Nav , Navbar, NavDropdown, Container } from 'react-bootstrap';
+import CartWidget from './CartWidget';
 
 function NavBar() {
     return <>
@@ -18,9 +19,9 @@ function NavBar() {
                             /></NavLink>
                         </Navbar.Brand>
                         <Nav>
-                            <NavDropdown title="Géneros" id="nav-dropdown" activeClassName="nav-item">
+                            <NavDropdown title="Géneros" id="nav-dropdown" activeclassname="nav-item">
                                 <NavDropdown.Item eventKey="4.1" >
-                                    <NavLink className="text-decoration-none nav-item" activeClassName="activeRoute" to="/gender/masculino">Masculino</NavLink>
+                                    <NavLink className="text-decoration-none nav-item" activeclassname="activeRoute" to="/gender/masculino">Masculino</NavLink>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item eventKey="4.2">
                                     <NavLink className="text-decoration-none nav-item" activeClassName="activeRoute" to="/gender/femenino">Femenino</NavLink>
@@ -30,13 +31,7 @@ function NavBar() {
                                 <NavLink className="text-decoration-none nav-item" activeClassName="activeRoute" to="/faq">FAQ</NavLink>
                             </Nav.Link>
                         </Nav>
-                        <Button className="cartWidget" variant="link">
-                            <img 
-                                src="https://image.flaticon.com/icons/png/512/126/126083.png" 
-                                alt="carrito" 
-                                className="col-1 offset-1 justify-content-center"
-                            />
-                        </Button>
+                        <CartWidget/>
                     </Container>
                 </Navbar>
             </header>

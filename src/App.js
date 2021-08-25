@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import Router from './router/Router'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {CartProvider} from './context/cartContext'
 
 function App() {
   return (
-    <div className="App container-fluid bg-light">
-      <NavBar />
-      <ItemListContainer />
-    </div>
+    <CartProvider>
+      <Router/>
+    </CartProvider>
   );
 }
 

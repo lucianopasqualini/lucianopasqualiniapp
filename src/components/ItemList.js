@@ -19,18 +19,9 @@ function ItemList () {
     return (
         <>
             {items.map(producto => {
-                const { id, title, description, price, pictureUrl, stock, initial } = producto;
                 return (
-                <Item
-                    key={id}
-                    id={id}
-                    title={title}
-                    description={description}
-                    price={price}
-                    pictureUrl={pictureUrl}
-                    stock={stock}
-                    initial={initial}/>
-                    )
+                    <Item key={producto.id} producto={producto}/>
+                )
             })}
         </>
     );

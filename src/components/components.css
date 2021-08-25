@@ -3,6 +3,7 @@
     font-weight: 600;
     color: rgba(0,0,0,.55);
     padding: 0 0.5rem;
+    vertical-align: middle;
 }
 
 .active {
@@ -16,7 +17,7 @@
 }
 
 .cartWidget img {
-    max-width: 40px;
+    max-width: 70px;
 }
 
 .itemSelectorBar {
