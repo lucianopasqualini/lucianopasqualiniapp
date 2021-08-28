@@ -24,10 +24,14 @@ function ItemDetail({producto}) {
                         <p className="card-text text-start itemPrice my-4">Precio: ${producto.price}</p>
                         <p className="card-text text-start itemStock my-3">Stock disponible: {producto.stock}</p>
                         <div className="row align-items-center mt-5">
-                            {quantityToAdd > 0 ? (
-                                <Link to="/cart">
-                                    <button className="btn btn-primary col-5 itemButton">Agregar al carrito</button>
+                            {quantityToAdd > 0 ? (<>
+                                <Link to="/">
+                                    <button className="btn btn-primary col-5 itemButton">Seguir comprando</button>
                                 </Link>
+                                <Link to="/cart">
+                                    <button className="btn btn-white text-primary col-5 itemButton py-2 goToCart">Ir al carrito</button>
+                                </Link>
+                                </>
                                 ) : (
                                 <Counter stock={producto.stock} initial={producto.initial} onAdd={onAdd} />
                             )}

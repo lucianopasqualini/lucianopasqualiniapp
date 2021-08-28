@@ -12,7 +12,10 @@ function CartWidget() {
         <Link to="/cart">
             <Button className="row cartWidget text-decoration-none justify-items-center" variant="link">
                 <img src="https://image.flaticon.com/icons/png/512/126/126083.png" alt="carrito"/>
-                <span className="nav-item text-center">{cartSize()}</span>
+                {cartSize() > 0 ? (
+                    <span className="nav-item text-center">{cartSize()}</span>
+                ):('')}
+                
             </Button>
         </Link>
     );
