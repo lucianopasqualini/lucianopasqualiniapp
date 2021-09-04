@@ -2,7 +2,7 @@
 Pagina de ecommerce genérica para usar con productos de cualquier categoría.
 
 # Demostración del funcionamiento de la página
-<div style="padding:49.05% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/597903836?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=039cb1f925" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="New Recording - 4/9/2021 16:04:56"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+https://user-images.githubusercontent.com/73292916/132105839-6bcb0e5a-2401-4c9e-810d-c0565658485c.mp4
 
 # Built With:
 - ReactJS
