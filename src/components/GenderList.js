@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Item from './Item';
-//import ListaProductos from './productos.json'
 import './components.css';
 import NavBar from './NavBar';
 import {getFirestore} from '../firebase/index'
@@ -13,16 +12,6 @@ function GenderList() {
     const [items, setItems] = useState([]);
     
     const [loading, setLoading] = useState(false);
-
-    //const getItems = (ab) => {
-    //    const selected = ListaProductos.filter( (producto) => producto.genero === ab)
-    //    setItems(selected);
-    //}
-
-    //useEffect( () => {
-    //        getItems(genero);
-    //    }
-    //)
 
     useEffect(()=> {
         setLoading(true);

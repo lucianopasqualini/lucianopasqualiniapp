@@ -2,21 +2,13 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import NavBar from "./NavBar"
 import { useParams } from 'react-router-dom';
-//import ListaProductos from './productos.json'
-import {getFirestore} from '../firebase/index'
+import {getFirestore} from '../firebase/index';
 
 function ItemDetailContainer() {
     
     const [items, setItem] = useState({});
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
-
-    //const getItem = (abc) => {
-    //    const UnItem = ListaProductos.find( (producto) => producto.id == abc);
-    //    const obj = {...UnItem};
-    //    setItem(obj)
-    //    console.log(UnItem)
-    //};
 
     useEffect(() => {
         setLoading(true);
@@ -35,7 +27,7 @@ function ItemDetailContainer() {
             })
             .catch((error) => console.log("Error"))
             .finally(() => setLoading(false));
-    }, [id]);
+        }, [id]);
 
     return (
         <div className="App container-fluid bg-light">

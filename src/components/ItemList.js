@@ -2,21 +2,12 @@ import { React, useState, useEffect } from 'react';
 import './components.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Item from './Item';
-//import ListaProductos from './productos.json'
 import {getFirestore} from '../firebase/index'
 
 function ItemList () {
 
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(false);
-
-    //useEffect(
-    //    () => {
-    //    setTimeout(async () => {
-    //        setItems(ListaProductos);
-    //    }, 1000);
-    //    },
-    //);
 
     useEffect(()=> {
         setLoading(true);

@@ -71,7 +71,7 @@
 .titulo {
     font-size: 30px !important;
     font-weight: bold;
-    color: rgb(4, 4, 148);;
+    color: rgb(4, 4, 148);
 }
 
 .goToCart {
@@ -111,4 +111,34 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+.thankYouPage {
+    height: 400px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.thankYouPage h5 {
+    font-size: 44px;
+    color: rgb(4, 4, 148);
+}
+
+.thankYouPage p {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.thankYouPage .pedidoId {
+    font-weight: bold !important;
+}
+
+.formulario {
+    color: rgb(4, 4, 148);
+    font-size: 18px;
+    font-weight: bold;
+
 }

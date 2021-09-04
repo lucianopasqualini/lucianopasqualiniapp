@@ -1,20 +1,87 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./components.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
 import NavBar from "./NavBar"
-
-/* const sumaTotal = () => {
-  const { items } = useContext(CartContext);
-  items.reduce((acc, cur) => acc + cur.price);
-  console.log(sumaTotal());
-}; */
+import {getFirestore} from '../firebase/index'
+import NumberFormat from 'react-number-format'
 
 const Cart = () => {
   const { items, cartSize, clear, removeItem } = useContext(CartContext);
   console.log("items", items);
   console.log("cartsize", cartSize(items));
+  const history = useHistory();
+  const saveHistory = (id) => history.push(`/thankyou/${id}`);
+
+  const [total, setTotal] = useState(0);
+  useEffect(() => {
+      if (items.length > 0){
+          let currentTotal = 0;
+          items.forEach(({producto, quantity}) => {
+              currentTotal += producto.price * quantity;
+          });
+          setTotal(currentTotal);
+        } else {
+            setTotal(0);
+        }
+    }, [items]);
+
+    const [name, setName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [phone, setPhone] = useState(null);
+
+    const handleInputChange = (event) => {
+        const target = event.target;
+        console.log(target);
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        if (target.name === "username"){
+            setName(value);
+        } if (target.name === "useremail"){
+            setEmail(value);
+        } if (target.name === "userphone") {
+            setPhone(value);
+        }
+    }
+
+    const handleFinishPurchase = (event) => {
+        event.preventDefault();
+
+        const newOrder = {
+            buyer: {
+                name: name,
+                phone: phone,
+                email: email
+            },
+            items: items.map(({producto, quantity}) => ({
+                producto: {
+                    id: producto.id,
+                    title: producto.title,
+                    price: producto.price,
+                },
+                quantity: quantity,
+            })),
+            total: total,
+        }
+        console.log(newOrder);
+        const db = getFirestore();
+        const orders = db.collection("orders");
+        const batch = db.batch();
+        orders
+            .add(newOrder)
+            .then((response) => {
+                console.log(response);
+                items.forEach(({producto, quantity}) => {
+                    const docRef = db.collection('productos').doc(producto.id)
+                    batch.update(docRef, {stock: producto.stock - quantity})
+                });
+                batch.commit();
+                saveHistory(response.id)
+            })
+            .then(clear()) 
+            .catch((error) => console.log(error));
+    }
+
     return (
         <div>
             <div>
@@ -68,20 +135,46 @@ const Cart = () => {
                             </tbody>
                         </table>
                     </div>
+
                     <div className="col-10 offset-1 text-end cart-total">
                         <div className="col-2 offset-9">
-                            Total:{" "}<span>${items.reduce((acc, cur) => cur.producto.price * cur.quantity + acc,0)}</span>
+                            Total:{" "}<NumberFormat value={total} displayType={"text"} thousandSeparator={true} prefix={"$"}/>
                         </div>
                     </div>
-                    <div className="col-10 offset-1 row justify-content-center py-4">
-                        <div className="col-2">
-                            <Link className="btn btn-outline-secondary cart-button col-12" to="/">Volver</Link>
+
+                    <form action="index" method="POST" className="m-auto mt-3 col-6 offset-3">
+                        <div className="formulario">Datos para confirmar la compra:</div>
+                        <div className="form-group text-left m-3">
+                            <input type="text" className="form-control" name="username" placeholder="Ingrese su nombre completo*" onChange={handleInputChange}/>
                         </div>
-                        <div className="col-2 offset-1">
-                            <button className="btn btn-success cart-button col-12" href="#">Comprar</button>
+                        <div className="form-group text-left m-3">
+                            <input type="mail" className="form-control" name="useremail" placeholder="Ingrese su email*" onChange={handleInputChange}/>
                         </div>
-                    </div>
+                        <div className="form-group text-left m-3">
+                            <input type="phone" className="form-control" name="userphone" placeholder="Ingrese su teléfono*" onChange={handleInputChange}/>
+                        </div>
+                        <div>
+                            * Completar todos los campos para finalizar la compra
+                        </div>
+                        <div className="col-10 offset-1 row justify-content-center py-4">
+                            <div className="col-4">
+                                <Link className="btn btn-outline-danger cart-button col-12" to="/">Volver</Link>
+                            </div>
+                            <div className="col-4 offset-1">
+                                {cartSize() > 0 && name != null && email != null && phone != null ? (
+                                    <Link type="submit" className="btn btn-success cart-button col-12" onClick={handleFinishPurchase} to="/thankyou">Comprar</Link>
+                                ):(
+                                    <Link className="btn btn-outline-secondary cart-button col-12" to="/cart/#">Comprar</Link>
+                                )}
+                            </div>
+                        </div>
+                    </form>
+
+                    
                 </div>
+
+                
+
             </div>
         </div>
     );

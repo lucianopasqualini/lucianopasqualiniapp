@@ -9,7 +9,7 @@ function NavBar() {
             <header id="header">
                 <Navbar>
                     <Container>
-                        <Navbar.Brand className="my-2 col-1 offset-1" href="#home">
+                        <Navbar.Brand className="my-2 col-1" href="#home">
                             <NavLink to="/" activeClassName="activeRoute">
                                 <img
                                 src="https://bluu.be/wp-content/themes/bluu-theme/src/img/logo-bluu-blue.png"

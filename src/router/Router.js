@@ -5,6 +5,7 @@ import Faq from '../components/Faq';
 import GenderList from '../components/GenderList';
 import Cart from '../components/Cart'
 import Home from '../components/Home'
+import ThankYouPage from '../components/ThankYouPage';
 
 const Router = () => {
     return (
@@ -15,6 +16,7 @@ const Router = () => {
                 <Route exact path="/gender/:genero" component={GenderList} />
                 <Route exact path="/itemdetail/:id" component={ItemDetailContainer} />
                 <Route exact path="/cart" component={Cart} />
+                <Route exact path="/thankyou/:id" component={ThankYouPage} />
             </Switch>
         </BrowserRouter>
     )
