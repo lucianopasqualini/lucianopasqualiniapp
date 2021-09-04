@@ -2,7 +2,7 @@
 Pagina de ecommerce genérica para usar con productos de cualquier categoría.
 
 # Demostración del funcionamiento de la página
-https://vimeo.com/597903836
+https://vimeo.com/597903836.mov
 
 # Built With:
 - ReactJS
