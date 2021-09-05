@@ -38,7 +38,12 @@ const Cart = () => {
         if (target.name === "username"){
             setName(value);
         } if (target.name === "useremail"){
-            setEmail(value);
+            let regEmail = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
+            if (regEmail.test(value) || value === '') { 
+                setEmail(value);
+            } else {
+                setEmail(false);
+            }
         } if (target.name === "userphone") {
             setPhone(value);
         }
@@ -148,26 +153,28 @@ const Cart = () => {
                             <input type="text" className="form-control" name="username" placeholder="Ingrese su nombre completo*" onChange={handleInputChange}/>
                         </div>
                         <div className="form-group text-left m-3">
-                            <input type="mail" className="form-control" name="useremail" placeholder="Ingrese su email*" onChange={handleInputChange}/>
+                            {email === false ? (<input type="email" className="form-control wrongEmail" name="useremail" placeholder="Ingrese su email*" onChange={handleInputChange}/>) : (<input type="email" className="form-control" name="useremail" placeholder="Ingrese su email*" onChange={handleInputChange}/>)}
+                            
                         </div>
                         <div className="form-group text-left m-3">
                             <input type="phone" className="form-control" name="userphone" placeholder="Ingrese su teléfono*" onChange={handleInputChange}/>
                         </div>
-                        <div>
-                            * Completar todos los campos para finalizar la compra
-                        </div>
+                        
+                        {cartSize() > 0 && (name == null | name === '' | email == null | email === '' | phone === '' | phone == null ) ? (<div className="warning">*Completar todos los campos para finalizar la compra</div>):('')}
+
                         <div className="col-10 offset-1 row justify-content-center py-4">
                             <div className="col-4">
                                 <Link className="btn btn-outline-danger cart-button col-12" to="/">Volver</Link>
                             </div>
                             <div className="col-4 offset-1">
-                                {cartSize() > 0 && name != null && email != null && phone != null ? (
+                                {cartSize() > 0 && name != null && email != null && phone != null && name !== '' && email !== '' && phone !== '' && email !== false ? (
                                     <Link type="submit" className="btn btn-success cart-button col-12" onClick={handleFinishPurchase} to="/thankyou">Comprar</Link>
                                 ):(
                                     <Link className="btn btn-outline-secondary cart-button col-12" to="/cart/#">Comprar</Link>
                                 )}
                             </div>
                         </div>
+                        
                     </form>
 
                     

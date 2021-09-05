@@ -138,7 +138,20 @@
 
 .formulario {
     color: rgb(4, 4, 148);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
+}
 
+.warning {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.wrongEmail {
+    border-color: #dc3545 !important;
+    color: #dc3545 !important;
+}
+
+.wrongEmail ::placeholder {
+    color: red;
 }
