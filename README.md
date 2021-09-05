@@ -2,7 +2,7 @@
 Pagina de ecommerce genérica para usar con productos de cualquier categoría.
 
 # Demostración del funcionamiento de la página
-https://user-images.githubusercontent.com/73292916/132105839-6bcb0e5a-2401-4c9e-810d-c0565658485c.mp4
+https://user-images.githubusercontent.com/73292916/132111550-78f10b07-30fc-4a02-ba5d-327820b287b4.mov
 
 # Built With:
 - ReactJS
